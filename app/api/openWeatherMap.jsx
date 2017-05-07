@@ -10,6 +10,7 @@ module.exports = {
 			function(res){
 				console.log('success', res);
 				if (res.data.cod && res.data.message){
+					console.log('error in success', res);
 					throw new Error(res.data.message);
 				}else{
 					return res.data.main.temp;
