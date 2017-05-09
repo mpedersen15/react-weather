@@ -20,7 +20,8 @@ module.exports = {
 			
 			function(res){
 				console.log('error callback in openweathermap', res);
-				throw new Error(res.response.data.message);
+				//throw new Error(res.response.data.message);
+				throw new Error('Unable to get weather for that location.');
 			}
 		);
 	}
