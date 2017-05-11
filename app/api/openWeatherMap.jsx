@@ -10,7 +10,7 @@ module.exports = {
 			
 			function(res){
 				console.log('success', res);
-				if (res.data.cod && res.data.message){
+				if (res.response.data.cod && res.response.data.message){
 					console.log('error in success', res);
 					throw new Error(res.data.message);
 				}else{
@@ -19,8 +19,9 @@ module.exports = {
 			},
 			
 			function(res){
-				console.log('error', res);
-				throw new Error(res.data.message);
+				console.log('error callback in openweathermap', res);
+				//throw new Error(res.response.data.message);
+				throw new Error('Unable to get weather for that location.');
 			}
 		);
 	}
